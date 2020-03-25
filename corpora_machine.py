@@ -47,6 +47,6 @@ def freq_dist(text):
     wordlist = list(word_tokenize(text))
     freq_dict = dict(Counter(wordlist))
 
-    list_keywords = nlargest(round(0.50*len(wordlist)), freq_dict, key = freq_dict.get)
+    list_keywords = nlargest(round(0.25*len(wordlist)), freq_dict, key = freq_dict.get)
     
     return list_keywords
