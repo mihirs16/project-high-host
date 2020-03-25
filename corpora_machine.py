@@ -4,8 +4,11 @@ import re
 
 import pandas as pd 
 
+from heapq import nlargest
+from collections import Counter
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
+from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 def clean_text(text):
@@ -37,3 +40,13 @@ def corpora_train():
     tfidf_vect.fit_transform(corpora_data['Text'])
 
     return tfidf_vect
+
+# return list of (N% of text)-most frequent words in a 
+def freq_dist(text):
+
+    wordlist = list(word_tokenize(text))
+    freq_dict = dict(Counter(wordlist))
+
+    list_keywords = nlargest(round(0.50*len(wordlist)), freq_dict, key = freq_dict.get)
+    
+    return list_keywords
