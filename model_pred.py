@@ -56,7 +56,7 @@ def text_return_tags(text, title):
     tag_list = list(set(tag_list))
     tag_data_dict = []
     for _tag in tag_list:
-        tag_data = {"name": _tag.name, "score": _tag.score}
+        tag_data = {"name": _tag.name, "score": _tag.score*100}
         tag_data_dict.append(tag_data)
 
     # return tags
