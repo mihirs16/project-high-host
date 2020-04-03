@@ -53,9 +53,15 @@ def text_return_tags(text, title):
             tag_list.append(tag(global_tags[i].lower(), scor_by_freq[keywd_by_freq.index(y)]))
 
     # get rid of duplicates
-    tag_list = list(set(tag_list))
+    tag_list_f = []
+    tag_uniq = []
+    for _t in range(0, len(tag_list)):
+        if tag_list[_t].name not in tag_uniq:
+            tag_uniq.append(tag_list[_t].name)
+            tag_list_f.append(tag_list[i])
+
     tag_data_dict = []
-    for _tag in tag_list:
+    for _tag in tag_list_f:
         tag_data = {"name": _tag.name, "score": _tag.score*100}
         tag_data_dict.append(tag_data)
 
