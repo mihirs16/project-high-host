@@ -40,7 +40,7 @@ def text_return_tags(text, title):
             tag_list.append(tag(ml_features[model_index].lower(), 0.8))
 
 
-    global_tags = list(corps.pd.read_csv('project_high/Model/global_taglist.csv')['global_taglist'])
+    global_tags = list(corps.pd.read_csv('global_taglist.csv')['global_taglist'])
     for i in range(0, len(global_tags)):
         y = str(global_tags[i]).lower()
 
