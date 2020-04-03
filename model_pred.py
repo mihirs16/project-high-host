@@ -58,7 +58,7 @@ def text_return_tags(text, title):
     for _t in range(0, len(tag_list)):
         if tag_list[_t].name not in tag_uniq:
             tag_uniq.append(tag_list[_t].name)
-            tag_list_f.append(tag_list[i])
+            tag_list_f.append(tag_list[_t])
 
     tag_data_dict = []
     for _tag in tag_list_f:
@@ -75,7 +75,7 @@ def text_return_tags(text, title):
 #     from selenium import webdriver
 
 #     # Getting Pages
-#     driver = webdriver.Chrome('project_high/Model/chromedriver.exe')
+#     driver = webdriver.Chrome('chromedriver.exe')
 #     driver.get(url)
 #     res = driver.execute_script("return document.documentElement.outerHTML")
 #     driver.quit()
@@ -99,7 +99,7 @@ def text_return_tags(text, title):
 #     return text, name
 
 # # local testing
-# text, title = test_webscraper_function('https://medium.com/@lukegardner/kill-content-marketing-replace-it-with-knowledge-marketing-e56b55e06b10?source=extreme_main_feed---------3-59--------------------ace2d49d_42a1_447b_a90a_323911908333--7')
+# text, title = test_webscraper_function('https://medium.com/better-programming/lets-create-an-instagram-bot-to-show-you-the-power-of-selenium-349d7a6744f7')
 
 # hm = text_return_tags(text, title)
 # print(hm)
